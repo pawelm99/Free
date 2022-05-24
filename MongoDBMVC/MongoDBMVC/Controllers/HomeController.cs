@@ -33,11 +33,10 @@ namespace MongoDBMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Computers computers)
         {
-            if(ModelState.IsValid)
-            {
+            
                 await db.Create(computers);
                 return RedirectToAction("Index");
-            }
+            
             return View(computers);
         }
 
